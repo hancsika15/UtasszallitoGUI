@@ -22,8 +22,20 @@ namespace UtasszallitoGUI
 
             }
             catch(Exception ex) 
-            { 
+            {
+                if (double.TryParse(tBxTorlonyomas.Text, out double number))
+                {
                     MessageBox.Show(ex.Message);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        text: "Adjon meg egy számot!",
+                        caption: "Hiba!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+               
             }
         }
     }
